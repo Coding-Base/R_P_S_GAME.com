@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+     body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed to flex-start */
+  font-size: 24px;
+  color: #fff;
+  z-index: 1; /* Ensure loader is on top */
+}
+
+.loader-text {
+  padding-top: 20vh; /* Adjust to your liking */
+  font-weight: bold;
+}
+
+.game-container {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-image {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.start-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: #3e8e41;
+} 
+   
+   .game-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}   
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-text">Loading...</div>
+    </div>
+    <div class="game-container" id="game-container">
+        <img class="game-image" src="Img.jpg" alt="Rock, Paper, Scissors Game" class="game-image">
+
+    </div>
+
+    <script>
+      
+        // Hide loader and show game container after 5 seconds
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('game-container').style.display = 'block';
+            gameboard()
+        }, 5000);
+        function gameboard(){
+          window.location.replace("game.html")
+        }
+    </script>
+</body>
+</html>
